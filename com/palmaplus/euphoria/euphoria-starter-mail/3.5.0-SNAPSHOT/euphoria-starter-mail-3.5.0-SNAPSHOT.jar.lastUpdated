@@ -1,0 +1,10 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Oct 23 09:03:12 CST 2017
+ccc2fad6ddec64d06957665cd7d9b37fbbe95fa5@default-palmap+-http\://nexus.palmap.cn/repository/public/.lastUpdated=1508720592096
+http\://repo.maven.apache.org/maven2/.lastUpdated=1508720592074
+https\://repo.spring.io/milestone/.error=
+https\://repo.spring.io/milestone/.lastUpdated=1508720592890
+http\://nexus.palmap.cn/repository/public/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-starter-mail\:jar\:3.5.0-SNAPSHOT from/to palmap+ (http\://nexus.palmap.cn/repository/public/)\: Failed to transfer file\: http\://nexus.palmap.cn/repository/public/com/palmaplus/euphoria/euphoria-starter-mail/3.5.0-SNAPSHOT/euphoria-starter-mail-3.5.0-SNAPSHOT.jar. Return code is\: 502 , ReasonPhrase\:Bad Gateway.
+http\://download.osgeo.org/webdav/geotools/.error=
+http\://repo.maven.apache.org/maven2/.error=
+http\://download.osgeo.org/webdav/geotools/.lastUpdated=1508720592485

@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu May 18 13:42:29 CST 2017
+http\://nexus.palmap.cn\:8081/nexus/content/groups/public/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-parent\:pom\:1.0-20170207.064639-173 from/to palmap+ (http\://nexus.palmap.cn\:8081/nexus/content/groups/public/)\: Connect to nexus.palmap.cn\:8081 [nexus.palmap.cn/58.246.116.155] failed\: Connection timed out\: connect
+4968dce3e2b133d1dc7a8e2c41576ae2720f9ec0@default-http\://nexus.palmap.cn\:8081/nexus/content/groups/public/.lastUpdated=1493720302329
+http\://nexus.palmap.cn/repository/public/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-parent\:pom\:1.0-20170207.064639-173 from/to palmap+ (http\://nexus.palmap.cn/repository/public/)\: ProcessCanceledException
+b312b823b784fb5f50689284244e28125f6de72e@default-http\://nexus.palmap.cn/repository/public/.lastUpdated=1486720606544
+4968dce3e2b133d1dc7a8e2c41576ae2720f9ec0@default-palmap+-http\://nexus.palmap.cn\:8081/nexus/content/groups/public/.lastUpdated=1495086149990

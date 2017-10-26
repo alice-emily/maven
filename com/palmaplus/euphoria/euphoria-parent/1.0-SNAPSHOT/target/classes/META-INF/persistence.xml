@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="map-importer" transaction-type="JTA">
+        <jta-data-source>java:comp/datasources/ocean</jta-data-source>
+        <class>com.palmaplus.nagrand.ds.ocean.Area</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Brand</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Building</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Category</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Connection</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Country</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Direction</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Facility</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Feature</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Floor</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Frame</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Location</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Map</class>
+        <class>com.palmaplus.nagrand.ds.ocean.MallType</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Path</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Door</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Payment</class>
+        <class>com.palmaplus.nagrand.ds.ocean.PlanarGraph</class>
+        <class>com.palmaplus.nagrand.ds.ocean.POI</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Region</class>
+        <class>com.palmaplus.nagrand.ds.ocean.Shape</class>
+        <class>com.palmaplus.nagrand.ds.ocean.O3Category</class>
+        <class>com.palmaplus.nagrand.ds.ocean.O3O4Linker</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="null"/>
+            <property name="hibernate.dialect" value="org.hibernate.spatial.dialect.postgis.PostgisPG94Dialect"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.globally_quoted_identifiers" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="sqlite-map" transaction-type="RESOURCE_LOCAL">
+        <class>com.palmaplus.nagrand.ds.o3.O3Mall</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3Floor</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3Building</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3AngleLine</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3Shop</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3FramePolygon</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3ShopPolygon</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3AreaPolygon</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3PublicServicePoint</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3EscalatorPoint</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3DoorPoint</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3LaneLine</class>
+        <class>com.palmaplus.nagrand.ds.o3.O3Altitude</class>
+        <properties>
+            <property name="euphoria.jpa.ignore" value="true"/>
+            <property name="hibernate.archive.autodetection" value="null"/>
+            <property name="hibernate.connection.driver_class" value="org.sqlite.JDBC"/>
+            <property name="hibernate.dialect" value="com.palmaplus.nagrand.ds.support.SQLiteDialect"/>
+            <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.globally_quoted_identifiers" value="true"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="validate"/>-->
+            <property name="hibernate.show_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

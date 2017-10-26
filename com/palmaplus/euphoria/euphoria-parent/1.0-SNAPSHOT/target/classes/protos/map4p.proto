@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+import "region.proto";
+
+option java_package = "com.palmaplus.nagrand.grpc.server.map4p";
+option java_outer_classname = "Map4pRpcServiceProto";
+option java_multiple_files = false;
+
+service Map4pRpcService {
+    //获取地图列表
+    rpc listMapsByPage (ListMapsByPageRequest) returns (ListMapsByPageResponse) {
+    }
+    //根据地图ID集合获取地图列表
+    rpc listMapsByMapIds (ListMapsByMapIdsRequest) returns (ListMapsByMapIdsResponse) {
+    }
+    //获取单个地图
+    rpc getMap (GetMapRequest) returns (GetMapResponse) {
+    }
+    //根据FloorID获取地图
+    rpc getMapByFloorId (GetMapByFloorIdRequest) returns (GetMapByFloorIdResponse) {
+    }
+    //更新地图
+    rpc updateMap (UpdateMapRequest) returns (UpdateMapResponse) {
+    }
+    //获取地图（将getMap和getMapByFloorId合并到这一个接口了）
+    rpc getMap4User (GetMap4UserRequest) returns (GetMap4UserResponse) {
+    }
+}
+
+//私有地图相关操作
+enum Operation {
+    ADD = 0; //添加用户
+    REPLACE = 1; //替换所有用户
+    REMOVE = 2; //移除所有用户
+}
+
+message ListMapsByPageRequest {
+    int32 regionCode = 1; //地区代码
+    string keyword = 2; //关键字
+    int32 page = 3; //页码
+    int32 size = 4; //大小
+    int64 userId = 5; //用户ID
+    bool enablePrivate = 6; //是否启用私有地图（若果启用，必须传入userId，此时只查该用户的私有地图和所有公有地图）
+}
+
+message ListMapsByMapIdsRequest {
+    repeated int64 mapIds = 1; //请求的mapId集合
+    int64 userId = 2; //同上
+    bool enablePrivate = 3;
+    int64 sceneId = 4;
+}
+
+message GetMapRequest {
+    int64 mapId = 1;
+    int64 userId = 2;
+    bool enablePrivate = 3;
+    int64 sceneId = 4;
+}
+
+message GetMapByFloorIdRequest {
+    int64 floorId = 1;
+    int64 userId = 2;
+    bool enablePrivate = 3;
+    int64 sceneId = 4;
+}
+
+message GetMap4UserRequest {
+    int64 mapId = 1;
+    int64 floorId = 2;
+    int64 userId = 3;
+    bool enablePrivate = 4;
+    int64 sceneId = 5;
+}
+
+//更新地图请求（私有地图操作）
+//例：将地图设置为私有，并添加用户，此时应传入private：true, userId:[1,2](也可不传),operation：ADD
+//移除私有地图里所有用户，此时应传入private：true, operation：REPLACE
+//删除私有地图里的指定用户，此时应传入private：true,userId:[1,2], operation：REMOVE
+message UpdateMapRequest {
+    int64 mapId = 1; //地图ID
+    bool private = 2; //是否更新为私有
+    repeated int64 userId = 3; //用户ID集合
+    Operation operation = 4; //操作
+    int64 sceneId = 5;
+}
+
+message MapDto {
+    int64 mapId = 1;
+    int64 locationId = 2;
+    string mapName = 3;
+    FullRegionDto region = 4; //详细地区信息，包含省市区
+    string address = 5;
+    bool private = 6; //是否为私有地图
+}
+
+message LocationIdsAndMapIds {
+    int64 mapId = 1;
+    int64 locationsId = 2;
+}
+
+//地图列表，如果启用了私有地图，私有地图会置顶
+message WrapperDto {
+    repeated MapDto data = 1;
+    int32 totalCount = 2;
+    int32 totalPage = 3;
+}
+
+message ListMapsByPageResponse {
+    WrapperDto WrapperDto = 1;
+}
+
+message ListMapsByMapIdsResponse {
+    repeated MapDto mapDto = 1;
+}
+
+message GetMapResponse {
+    MapDto MapDto = 1;
+}
+
+message GetMapByFloorIdResponse {
+    MapDto MapDto = 1;
+}
+
+message GetMap4UserResponse {
+    MapDto mapDto = 1;
+}
+
+//更新地图响应
+message UpdateMapResponse {
+    int64 mapId = 1;
+    bool private = 2;
+    repeated int64 userId = 3;
+    Operation operation = 4;
+}
+
+

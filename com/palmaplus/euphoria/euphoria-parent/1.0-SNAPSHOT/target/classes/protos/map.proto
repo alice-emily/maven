@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.client.map";
+option java_outer_classname = "MapRpcServiceProto";
+option java_multiple_files = false;
+
+service MapRpcService {
+    rpc allPlatformMap(AllPlatformMapRequest) returns (AllPlatformMapResponse) {}
+    rpc getMapsBySceneId(MapsBySceneIdRequest) returns (MapsBySceneIdResponse) {}
+    rpc getMapIdsBySceneId(MapIdsBySceneIdRequest) returns (MapIdsBySceneIdResponse) {}
+}
+
+message AllPlatformMapRequest {
+}
+
+message MapsBySceneIdRequest {
+    int64 sceneId = 1;
+}
+
+message MapIdsBySceneIdRequest {
+    int64 sceneId = 1;
+}
+
+message Map {
+    int64 mapId = 1;
+    string mapName = 2;
+    int64 locationId = 3;
+}
+
+message AllPlatformMapResponse {
+    repeated Map map = 1;
+}
+
+message MapsBySceneIdResponse {
+    repeated Map map = 1;
+}
+
+message MapIdsBySceneIdResponse {
+    repeated int64 mapId = 1;
+}

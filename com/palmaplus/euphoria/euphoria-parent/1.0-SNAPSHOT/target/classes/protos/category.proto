@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.server.category";
+option java_outer_classname = "CategoryRpcServiceProto";
+option java_multiple_files = false;
+
+service CategoryRpcService {
+    rpc getAllSecondaryCategories(GetAllSecondaryCategoriesRequest) returns (GetAllSecondaryCategoriesRpcResponse) {}
+    rpc getCategoryById(GetCategoryByIdRequest) returns (GetCategoryByIdResponse) {}
+    rpc getCascadeCategory(GetCascadeCategoryRequest) returns (GetCascadeCategoryResponse){}
+}
+
+message GetAllSecondaryCategoriesRequest{
+}
+
+message GetCategoryByIdRequest {
+    int64 id = 1;
+}
+
+message CategoryDto {
+    int64 id = 1;
+    string name1 = 2;
+    string name2 = 3;
+    string name3 = 4;
+    string name4 = 5;
+}
+
+message GetAllSecondaryCategoriesRpcResponse{
+    repeated CategoryDto categoryDto = 1;
+}
+
+message GetCategoryByIdResponse {
+    CategoryDto categoryDto = 1;
+}
+
+/** 级联查询category */
+message GetCascadeCategoryRequest {
+    int64 id = 1;
+    string name = 2;
+}
+
+message GetCascadeCategoryResponse {
+    repeated CascadeCategoryResponse cascadeCategoryResponses = 1;
+}
+
+message CascadeCategoryResponse {
+    int64 id = 1;
+    string name = 2;
+}

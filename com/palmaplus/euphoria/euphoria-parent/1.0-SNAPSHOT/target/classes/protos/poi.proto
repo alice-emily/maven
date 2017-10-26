@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.server.poi";
+option java_outer_classname = "POIRpc";
+option java_multiple_files = false;
+
+service POIRpcService {
+    /** 获取POI总数 */
+    rpc getPOICount(GetPOICountRequest) returns (GetPOICountResponse){}
+
+    /** 某场景下POI是否存在 */
+    rpc isPOIExist(IsPOIExistRequest) returns (POIOperationResponse) {}
+
+    /** 启用POI编辑 */
+    rpc enablePOIEdit(EnablePOIEditRequest) returns (POIOperationResponse){}
+
+    /** 取消POI编辑 */
+    rpc disablePOIEdit(DisablePOIEditRequest) returns (POIOperationResponse){}
+
+    /** 更新POI模板 */
+    rpc updatePOISchema(UpdatePOISchemaRequest) returns (POIOperationResponse){}
+
+    /** 更新scene下某些POI的字段值 */
+    rpc updatePOIField(UpdatePOIFieldsRequest) returns (POIOperationResponse){}
+
+    /** 开启自定义POI之后,又在场景下新添加了地图,此时需要  2016-11-17 */
+    rpc addMapToScene(AddMapToSceneRequest) returns (POIOperationResponse){}
+}
+
+/** POI 字段类型 */
+enum POIFieldType {
+    String = 0;
+    Number = 1;
+    Boolean = 2;
+}
+
+/** POI 字段定义 */
+message POIFieldDefinition {
+    string name = 1;
+    string oldName = 2;
+    POIFieldType type = 3;
+    bool showInPlanarGraph = 4;
+    bool showInPOIDetail = 5;
+}
+
+/** POI 字段值 */
+message POIField {
+    int64 id = 1;
+    POIFieldDefinition definition = 2;
+    string value = 3;
+}
+
+message GetPOICountRequest {
+    int64 sceneId = 1;
+}
+
+message GetPOICountResponse {
+    int64 count = 1;
+}
+
+message IsPOIExistRequest {
+    int64 sceneId = 1;
+    int64 poiId = 2;
+}
+
+/** POI 操作响应 */
+// 0    success
+// 1    fail
+// 2    poi edit not enable
+message POIOperationResponse {
+    int32 code = 1;
+    string message = 2;
+}
+
+message EnablePOIEditRequest {
+    int64 sceneId = 1;
+    repeated POIFieldDefinition definitions = 2;
+}
+
+message DisablePOIEditRequest {
+    int64 sceneId = 1;
+}
+
+message UpdatePOISchemaRequest {
+    int64 sceneId = 1;
+    repeated POIFieldDefinition definitions = 2;
+}
+
+message UpdatePOIFieldsRequest {
+    int64 sceneId = 1;
+    repeated POIField fields = 2;
+}
+
+message AddMapToSceneRequest {
+    int64 sceneId = 1;
+    int64 mapId = 2;
+    repeated POIFieldDefinition definitions = 3;
+}

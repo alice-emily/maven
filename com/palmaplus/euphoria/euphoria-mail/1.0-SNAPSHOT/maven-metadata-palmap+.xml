@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.palmaplus.euphoria</groupId>
+  <artifactId>euphoria-mail</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170105.130416</timestamp>
+      <buildNumber>289</buildNumber>
+    </snapshot>
+    <lastUpdated>20170105130416</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20170105.130415-288</value>
+        <updated>20170105130416</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20170105.130415-288</value>
+        <updated>20170105130416</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>1.0-20170105.130415-288</value>
+        <updated>20170105130416</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

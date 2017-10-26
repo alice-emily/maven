@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.server.region";
+option java_outer_classname = "RegionRpc";
+option java_multiple_files = false;
+
+service RegionRpcService {
+    rpc getProvincesByCountry(GetProvincesByCountryRequest) returns (GetProvincesByCountryResponse) {}
+    rpc getCitiesByProvince(GetCitiesByProvinceRequest) returns (GetCitiesByProvinceResponse) {}
+    rpc getCountiesByCity(GetCountiesByCityRequest) returns (GetCountiesByCityResponse) {}
+    rpc getFullRegionByRegionCode(GetFullRegionByRegionCodeRequest) returns (GetFullRegionByRegionCodeResponse) {}
+    rpc getFullRegionByMap(GetFullRegionByMapRequest) returns (GetFullRegionByMapResponse) {}
+}
+
+message GetProvincesByCountryRequest{
+    string countryCode = 1;
+}
+
+message GetCitiesByProvinceRequest{
+    string countryCode = 1;
+    int32 provinceCode = 2;
+}
+
+message GetCountiesByCityRequest{
+    string countryCode = 1;
+    int32 cityCode = 2;
+}
+
+message GetFullRegionByRegionCodeRequest{
+    string countryCode = 1;
+    int32 regionCode = 2;
+}
+
+message GetFullRegionByMapRequest{
+    int64 mapId = 1;
+    int64 sceneId = 2;
+}
+
+message ItemDto{
+    int64 id = 1;
+    string name = 2;
+    bool flag = 3;
+}
+
+message FullRegionDto{
+    string countryCode = 1;
+    string countryName = 2;
+    int32 provinceCode = 3;
+    string provinceName = 4;
+    int32 cityCode = 5;
+    string cityName = 6;
+    int32 countyCode = 7;
+    string countyName = 8;
+}
+
+message GetProvincesByCountryResponse{
+    repeated ItemDto itemDto = 1;
+}
+
+message GetCitiesByProvinceResponse{
+    repeated ItemDto itemDto = 1;
+}
+
+message GetCountiesByCityResponse{
+    repeated ItemDto itemDto = 1;
+}
+
+message GetFullRegionByRegionCodeResponse{
+    FullRegionDto fullRegionDto = 1;
+}
+
+message GetFullRegionByMapResponse{
+    FullRegionDto fullRegionDto = 1;
+}

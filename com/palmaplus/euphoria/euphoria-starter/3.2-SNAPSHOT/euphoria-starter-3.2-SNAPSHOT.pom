@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>euphoria-parent</artifactId>
+        <groupId>com.palmaplus.euphoria</groupId>
+        <version>3.2-SNAPSHOT</version>
+        <relativePath>../euphoria-parent</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>euphoria-starter</artifactId>
+    <packaging>pom</packaging>
+    <name>Euphoria :: Starter</name>
+    <description>
+        The euphoria starter module provides starter pom for euphoria based library or application
+    </description>
+    <modules>
+        <module>euphoria-starter-web</module>
+        <module>euphoria-starter-command</module>
+        <module>euphoria-starter-curator</module>
+        <module>euphoria-starter-grpc</module>
+        <module>euphoria-starter-jpa</module>
+        <module>euphoria-starter-narayana</module>
+        <module>euphoria-starter-resteasy</module>
+        <module>euphoria-starter-swagger</module>
+        <module>euphoria-starter-metrics</module>
+        <module>euphoria-starter-keycloak</module>
+        <module>euphoria-starter-okhttp</module>
+        <module>euphoria-starter-retrofit</module>
+        <module>euphoria-starter-mongodb</module>
+        <module>euphoria-starter-beetlsql</module>
+        <module>euphoria-starter-mail</module>
+        <module>euphoria-starter-elasticsearch</module>
+        <module>euphoria-starter-test</module>
+        <module>euphoria-starter-freemarker</module>
+        <module>euphoria-starter-thymeleaf</module>
+        <module>euphoria-starter-beetl</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.palmaplus.euphoria</groupId>
+            <artifactId>euphoria-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.palmaplus.euphoria</groupId>
+            <artifactId>euphoria-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>duplicate-dependencies</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+                            <ignoredResourcePatterns>
+                                <ignoredResourcePattern>changelog.txt</ignoredResourcePattern>
+                                <ignoredResourcePattern>.gitkeep</ignoredResourcePattern>
+                                <ignoredResourcePattern>log4j2.xml</ignoredResourcePattern>
+                                <ignoredResourcePattern>ValidationMessages.properties</ignoredResourcePattern>
+                                <ignoredResourcePattern>ExceptionMessages.properties</ignoredResourcePattern>
+                            </ignoredResourcePatterns>
+                            <ignoredDependencies>
+                                <dependency>
+                                    <groupId>net.minidev</groupId>
+                                    <artifactId>accessors-smart</artifactId>
+                                </dependency>
+                                <dependency>
+                                    <groupId>jline</groupId>
+                                    <artifactId>jline</artifactId>
+                                </dependency>
+                            </ignoredDependencies>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

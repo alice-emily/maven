@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>euphoria-parent</artifactId>
+        <groupId>com.palmaplus.euphoria</groupId>
+        <version>2.0-SNAPSHOT</version>
+        <relativePath>../euphoria-parent</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>euphoria-module</artifactId>
+    <packaging>pom</packaging>
+    <name>Euphoria :: Module</name>
+    <description>
+        The euphoria module provides the integration with common libraries and frameworks
+    </description>
+
+    <modules>
+        <module>euphoria-cache</module>
+        <module>euphoria-camel</module>
+        <module>euphoria-cmd</module>
+        <module>euphoria-geo</module>
+        <module>euphoria-grpc</module>
+        <module>euphoria-jpa</module>
+        <module>euphoria-jta</module>
+        <module>euphoria-rest</module>
+        <module>euphoria-swagger</module>
+    </modules>
+
+</project>

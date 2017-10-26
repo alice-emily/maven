@@ -1,0 +1,19 @@
+euphoria:
+  datasources:
+    pop:
+      url: jdbc:mysql://localhost/platform
+      username: root
+      password:
+    ocean:
+      url: jdbc:postgresql://localhost:5432/ocean?currentSchema=ocean
+      username: postgres
+      password: postgres
+      jta: true
+    nagrand:
+      url: jdbc:postgresql://localhost:5432/nagrand?currentSchema=road_net
+      username: postgres
+      password: postgres
+  logging:
+    logger:
+      druid.sql: info
+      com.palmaplus.nagrand: debug

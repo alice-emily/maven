@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Nov 29 20:07:40 CST 2016
+@default-boundless-http\://repo.boundlessgeo.com/main/.lastUpdated=1480421260835
+http\://repo.boundlessgeo.com/main/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-grpc\:pom\:1.0-20161129.120332-67 from/to boundless (http\://repo.boundlessgeo.com/main)\: repo.boundlessgeo.com
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1480421260832
+http\://nexus.palmap.cn\:8081/nexus/content/groups/public/.lastUpdated=1480421260909
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-grpc\:pom\:1.0-20161129.120332-67 from/to central (https\://repo.maven.apache.org/maven2/)\: repo.maven.apache.org

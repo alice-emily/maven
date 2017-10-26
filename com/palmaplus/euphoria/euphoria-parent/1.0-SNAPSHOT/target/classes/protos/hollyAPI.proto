@@ -1,0 +1,12 @@
+syntax = "proto2";
+package com.palmaplus.nagrand.ws.filter.statistic;
+option java_package = "com.palmaplus.nagrand.ws.filter.statistic";
+
+message ApiStatistic {
+    required string path           = 1;
+    required string accept         = 2;
+    required string key            = 3;
+    required string version        = 4;
+    required int32  code           = 5;
+    required int64  accessTime     = 6;
+}

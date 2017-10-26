@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.palmaplus.euphoria</groupId>
+  <artifactId>euphoria-starter-swagger</artifactId>
+  <version>3.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170428.065123</timestamp>
+      <buildNumber>23</buildNumber>
+    </snapshot>
+    <lastUpdated>20170428065123</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>3.0-20170428.065123-23</value>
+        <updated>20170428065123</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>3.0-20170428.065123-23</value>
+        <updated>20170428065123</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Wed Aug 23 17:37:53 CST 2017
+@default-central-http\://repo.maven.apache.org/maven2/.lastUpdated=1503481073001
+http\://nexus.palmap.cn/repository/public/.lastUpdated=1503481073062
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-starter-swagger\:pom\:3.5.0-20170823.083055-71 from/to central (http\://repo.maven.apache.org/maven2)\: Connect to repo.maven.apache.org\:80 [repo.maven.apache.org/151.101.24.215] failed\: Connection timed out\: connect

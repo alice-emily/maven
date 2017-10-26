@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.client.scene";
+option java_outer_classname = "SceneRpc";
+option java_multiple_files = false;
+
+service SceneRpcService {
+    rpc getSceneByAppKey(SceneRpcRequestByAppKey) returns (SceneRpcResponse) {}
+    rpc getSceneByToken(SceneRpcRequestByToken) returns (SceneRpcResponse) {}
+    rpc getSceneBySceneId(SceneRpcRequestBySceneId) returns (SceneRpcResponse) {}
+    rpc getScenesByAppName(SceneRpcRequestByAppName) returns (SceneRpcResponses) {}
+    rpc getScenesByApMac(SceneRpcRequestByApMac) returns (SceneRpcResponses) {}
+    rpc getScenesByEmail(SceneRpcRequestByEmail) returns (SceneRpcResponses) {}
+    rpc getScenesByMapId(SceneRpcRequestByMapId) returns (SceneRpcResponses){}
+}
+
+message SceneRpcRequestByAppKey {
+    string appKey = 1;
+}
+
+message SceneRpcRequestByToken {
+    int64 token = 1;
+}
+
+message SceneRpcRequestBySceneId {
+    int64 sceneId = 1;
+}
+
+message SceneRpcRequestByAppName {
+    string appName = 1;
+}
+
+message SceneRpcRequestByApMac {
+    string mac = 1;
+}
+
+message SceneRpcRequestByEmail {
+    string email = 1;
+}
+
+message SceneRpcRequestByMapId {
+    int64 mapId = 1;
+}
+
+message SceneRpcResponse {
+    int64 sceneId = 1;
+    string sceneName = 2;
+    string appKey = 3;
+    bool available = 4;
+    int64 createAt = 5;
+    string secretKey = 6;
+    int64 token = 7;
+    repeated string permissions = 8;
+    bool poiEditEnable = 9;
+}
+
+message SceneRpcResponses {
+    repeated SceneRpcResponse sceneRpcResponse = 1;
+}

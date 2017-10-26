@@ -1,0 +1,73 @@
+euphoria:
+  datasources:
+    pop:
+      url: jdbc:mysql://10.0.23.9/platform?autoReconnect=true&failOverReadOnly=false
+      username: root
+      password:
+#      url: jdbc:mysql://10.0.0.181/platform?autoReconnect=true&failOverReadOnly=false
+#      username: platform
+#      password: pu5eeLa+geepei8a
+    ocean:
+      url: jdbc:postgresql://10.0.23.25:5432/ocean?currentSchema=ocean
+      username: postgres
+      password: postgres
+      jta: true
+    nagrand:
+      url: jdbc:postgresql://10.0.23.25:5432/nagrand?currentSchema=road_net
+      username: postgres
+      password: postgres
+  grpc:
+    clients:
+      pop:
+        host: 10.0.23.23
+        port: 38628
+    server:
+      port: 50000
+  web:
+    listeners:
+      - host: 0.0.0.0
+        port: 58080
+        protocol: HTTP
+  infinispan:
+    cluster: false
+    clusterName: nagrand
+    caches:
+      default:
+        maxEntries: 20000
+      scene-cache:
+        index:
+          enable : true
+      scene-poi:
+        index:
+          enable : true
+  mail:
+    server:
+      ssl: true
+      host: smtp.palmaplus.com
+      username: nagrand@ipalmap.com
+      password: MapServer+2017
+    groups:
+      nagrand:
+        from: nagrand@ipalmap.com
+        to: [pin.liu@palmaplus.com,sifan.pan@palmaplus.com,guanyu.yue@palmaplus.com]
+      pop:
+        from: nagrand@ipalmap.com
+        to: [kai.zhang@palmaplus.com,yang.qiu@palmaplus.com]
+      map:
+        from: nagrand@ipalmap.com
+        to: [pin.liu@palmaplus.com,sifan.pan@palmaplus.com,guanyu.yue@palmaplus.com,xuefang.tao@palmaplus.com]
+  zookeeper:
+    local: false
+    timeout: 10000
+    server: 10.0.23.15:2181,10.0.23.17:2181,10.0.23.18:2181
+  statistic:
+    enable: true
+#      brokers: hadoop4.ipalmap.com:9092,hadoop5.ipalmap.com:9092,hadoop6.ipalmap.com:9092
+    brokers: 10.0.23.15:9092,10.0.23.17:9092,10.0.23.18:9092
+    topic: novaApiTopic
+
+nagrand:
+  elasticsearch:
+    nodes:
+      - host: 10.0.23.10
+        port: 9300

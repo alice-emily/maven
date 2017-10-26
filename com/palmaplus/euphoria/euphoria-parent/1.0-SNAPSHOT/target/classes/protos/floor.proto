@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "com.palmaplus.nagrand.grpc.server.floor";
+option java_outer_classname = "FloorRpcServiceProto";
+option java_multiple_files = false;
+
+service FloorRpcService {
+    rpc getFloorsBriefByMap(GetFloorByIdRequest) returns (GetFloorsRpcResponse) {}
+    rpc getPlanarGraphsByMap(GetFloorByIdRequest) returns (GetFloorsRpcResponse) {}
+}
+
+message GetFloorByIdRequest {
+    int64 mapId = 1;
+    int64 sceneId = 2;
+}
+
+message FloorDto {
+    int64 id = 1;
+    string name = 2;
+    string address = 3;
+    bool defaultFloor = 4;
+}
+
+message GetFloorsRpcResponse{
+    repeated FloorDto floorDto = 1;
+}

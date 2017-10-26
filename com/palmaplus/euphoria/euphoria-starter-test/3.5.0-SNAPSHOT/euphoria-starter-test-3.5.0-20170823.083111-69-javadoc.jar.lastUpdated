@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Oct 26 14:46:14 CST 2017
+ccc2fad6ddec64d06957665cd7d9b37fbbe95fa5@default-palmap+-http\://nexus.palmap.cn/repository/public/.lastUpdated=1509000373632
+https\://repo.spring.io/milestone/.error=
+https\://repo.spring.io/milestone/.lastUpdated=1509000374027
+http\://nexus.palmap.cn/repository/public/.error=Could not transfer artifact com.palmaplus.euphoria\:euphoria-starter-test\:jar\:javadoc\:3.5.0-20170823.083111-69 from/to palmap+ (http\://nexus.palmap.cn/repository/public/)\: Failed to transfer file\: http\://nexus.palmap.cn/repository/public/com/palmaplus/euphoria/euphoria-starter-test/3.5.0-SNAPSHOT/euphoria-starter-test-3.5.0-20170823.083111-69-javadoc.jar. Return code is\: 502 , ReasonPhrase\:Bad Gateway.

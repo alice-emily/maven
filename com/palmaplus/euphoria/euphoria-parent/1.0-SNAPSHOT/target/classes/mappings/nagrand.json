@@ -1,0 +1,227 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "enabled": true
+      }
+    },
+    "map": {
+      "properties": {
+        "coordinates": {
+          "type": "nested",
+          "properties": {
+            "type": {
+              "type": "string",
+              "index": "no"
+            },
+            "coordinates": {
+              "type": "double",
+              "index": "no"
+            }
+          }
+        },
+        "angleLine": {
+          "type": "double",
+          "index": "no"
+        },
+        "name": {
+          "type": "string",
+          "fields": {
+            "name": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        },
+        "englishName": {
+          "type": "string",
+          "fields": {
+            "englishName": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "poi": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "fields": {
+            "name": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        },
+        "englishName": {
+          "type": "string",
+          "fields": {
+            "englishName": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        },
+        "display": {
+          "type": "string",
+          "fields": {
+            "display": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        },
+        "categories": {
+          "type": "object",
+          "properties": {
+            "name1": {
+              "type": "string"
+            },
+            "name2": {
+              "type": "string"
+            },
+            "name3": {
+              "type": "string",
+              "fields": {
+                "name3": {
+                  "type": "string"
+                },
+                "autocomplete": {
+                  "analyzer": "autocomplete",
+                  "type": "string"
+                }
+              }
+            },
+            "name4": {
+              "type": "string",
+              "fields": {
+                "name4": {
+                  "type": "string"
+                },
+                "autocomplete": {
+                  "analyzer": "autocomplete",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "address": {
+          "type": "string",
+          "fields": {
+            "address": {
+              "type": "string"
+            },
+            "autocomplete": {
+              "analyzer": "autocomplete",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "planar_graph": {
+      "properties": {
+        "Frame": {
+          "type": "object",
+          "properties": {
+            "features": {
+              "type": "nested",
+              "properties": {
+                "geometry": {
+                  "type": "nested",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "index": "no"
+                    },
+                    "coordinates": {
+                      "type": "double",
+                      "index": "no"
+                    }
+                  }
+                },
+                "indexedShape": {
+                  "type": "geo_shape"
+                }
+              }
+            }
+          }
+        },
+        "Area": {
+          "type": "object",
+          "properties": {
+            "features": {
+              "type": "nested",
+              "properties": {
+                "geometry": {
+                  "type": "nested",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "index": "no"
+                    },
+                    "coordinates": {
+                      "type": "double",
+                      "index": "no"
+                    }
+                  }
+                },
+                "indexedShape": {
+                  "type": "geo_shape"
+                }
+              }
+            }
+          }
+        },
+        "Facility": {
+          "type": "object",
+          "properties": {
+            "features": {
+              "type": "nested",
+              "properties": {
+                "geometry": {
+                  "type": "nested",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "index": "no"
+                    },
+                    "coordinates": {
+                      "type": "double",
+                      "index": "no"
+                    }
+                  }
+                },
+                "indexedPoint": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

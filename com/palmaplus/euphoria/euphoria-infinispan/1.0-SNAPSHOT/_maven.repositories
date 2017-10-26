@@ -1,0 +1,7 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Tue Jan 17 15:23:45 CST 2017
+euphoria-infinispan-1.0-SNAPSHOT-sources.jar>=
+euphoria-infinispan-1.0-SNAPSHOT.jar>=
+euphoria-infinispan-1.0-SNAPSHOT.pom>=
+euphoria-infinispan-1.0-SNAPSHOT.jar>palmap+=
+euphoria-infinispan-1.0-SNAPSHOT.pom>palmap+=

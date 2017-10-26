@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.palmaplus.euphoria</groupId>
+    <artifactId>euphoria</artifactId>
+    <version>2.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Euphoria</name>
+    <description>
+        Euphoria
+        Requires Druid (Balance)
+        Requires level 100
+        You feel a deeper connection to the stars, reducing your Balance Energy cycle time by 50%. Additionally, your
+        Lunar and Solar Empowerments also reduce the cast time of the affected spells by 20%.
+
+        See: http://www.wowhead.com/spell=152222/euphoria
+    </description>
+
+    <developers>
+        <developer>
+            <name>Yongxian Wu</name>
+            <email>yongxian.wu@palmaplus.com</email>
+            <organization>Palmap+</organization>
+            <organizationUrl>http://www.palmap.cn</organizationUrl>
+        </developer>
+        <developer>
+            <name>Pin Liu</name>
+            <email>pin.liu@palmaplus.com</email>
+            <organization>Palmap+</organization>
+            <organizationUrl>http://www.palmap.cn</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>http://stash.palmap.cn/scm/eup/euphoria.git</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>palmap+</id>
+            <url>http://nexus.palmap.cn/repository/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>palmap+</id>
+            <url>http://nexus.palmap.cn/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>palmap+</id>
+            <url>http://nexus.palmap.cn/repository/public/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>euphoria-assets</module>
+        <module>euphoria-parent</module>
+        <module>euphoria-core</module>
+        <module>euphoria-cmd</module>
+        <module>euphoria-cache</module>
+        <module>euphoria-geo</module>
+        <module>euphoria-grpc</module>
+        <module>euphoria-jpa</module>
+        <module>euphoria-jta</module>
+        <module>euphoria-camel</module>
+        <module>euphoria-rest</module>
+        <module>euphoria-swagger</module>
+        <module>euphoria-example</module>
+    </modules>
+</project>

@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Dec 02 17:00:55 CST 2016
+http\://repo.boundlessgeo.com/main/.error=
+http\://repo.boundlessgeo.com/main/.lastUpdated=1480669255447
+file\://${basedir}/lib/.error=
+file\://${basedir}/lib/.lastUpdated=1480669255467
+https\://repo.maven.apache.org/maven2/.lastUpdated=1480669250597
+https\://repo.maven.apache.org/maven2/.error=

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.palmaplus.euphoria</groupId>
+  <artifactId>euphoria</artifactId>
+  <version>3.2-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170711.095627</timestamp>
+      <buildNumber>108</buildNumber>
+    </snapshot>
+    <lastUpdated>20170711095627</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>3.2-20170711.095627-108</value>
+        <updated>20170711095627</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

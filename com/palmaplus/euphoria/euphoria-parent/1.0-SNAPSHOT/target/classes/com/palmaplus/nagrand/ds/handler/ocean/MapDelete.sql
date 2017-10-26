@@ -1,0 +1,1 @@
+DELETE FROM ocean."Location" WHERE "ID" IN (SELECT "LocationID" FROM ocean."Location_Ancestors" WHERE ? = ANY("Ancestors") )
